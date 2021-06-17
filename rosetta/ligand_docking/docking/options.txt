@@ -5,7 +5,8 @@
 
 -in
 	-file
-		-s '1UTM_A.pdb PEA_conformers.sdf'
+		-s '1UTM_A_PEA.pdb'
+		-extra_res_fa PEA.params
 
 #the packing options allow Rosetta to sample additional rotamers for
 #protein sidechain angles chi 1 (ex1) and chi 2 (ex2) 
