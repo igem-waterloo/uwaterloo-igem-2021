@@ -21,8 +21,8 @@ do_redraw = True
 
 # Frames to store the graph, info readout (text, data summaries, etc), and buttons for user input
 graph = tk.Frame(root)
-info_window = tk.Frame(root)
-controls = tk.Frame(root)
+info_window = tk.Frame(root)  # meant info readouts
+controls = tk.Frame(root)  # buttons
 
 graph.pack()
 info_window.pack()
@@ -85,9 +85,11 @@ def update_graph(ax, shtuff):
     if do_redraw:
         ax.cla()
         ax.plot(g, 2 * np.sin(2 * np.pi * g) + g / 10)
+        ax.plot(g, 3 * np.sin(2 * np.pi * g) + g / 10)
+        ax.plot(g, 1 * np.sin(2 * np.pi * g) + g / 10)
         canvas.draw()
 
-    tim = Timer(0.1, update_graph, [ax, shtuff + 0.1])
+    tim = Timer(0.001, update_graph, [ax, shtuff + 0.1])
     tim.daemon = True
     tim.start()
 
@@ -108,3 +110,8 @@ tk.Button(master=controls, text="Continue Drawing", command=continue_drawing).pa
 
 # Start the GUI
 tk.mainloop()
+
+# TODO: The below:
+# Package into classes
+# Multiple graphs
+# Data readouts
