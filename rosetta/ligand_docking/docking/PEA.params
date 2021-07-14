@@ -2,27 +2,27 @@ NAME PEA
 IO_STRING PEA Z
 TYPE LIGAND
 AA UNK
-ATOM  C1  aroC  X   -0.14
-ATOM  C2  aroC  X   -0.14
-ATOM  C3  aroC  X   -0.14
-ATOM  C4  aroC  X   -0.14
-ATOM  C5  aroC  X   -0.14
-ATOM  C6  aroC  X   -0.14
-ATOM  H5  Haro  X   0.09
-ATOM  H4  Haro  X   0.09
-ATOM  H3  Haro  X   0.09
-ATOM  H2  Haro  X   0.09
-ATOM  H1  Haro  X   0.09
-ATOM  C7  CH2   X   -0.21
-ATOM  C8  CH2   X   -0.21
-ATOM  N1  Nlys  X   -0.65
-ATOM  H10 Hpol  X   0.40
-ATOM  H11 Hpol  X   0.40
-ATOM  H12 Hpol  X   0.40
-ATOM  H8  Hapo  X   0.07
-ATOM  H9  Hapo  X   0.07
-ATOM  H6  Hapo  X   0.07
-ATOM  H7  Hapo  X   0.07
+ATOM  C1  aroC  X   -0.09
+ATOM  C2  aroC  X   -0.09
+ATOM  C3  aroC  X   -0.09
+ATOM  C4  aroC  X   -0.09
+ATOM  C5  aroC  X   -0.09
+ATOM  C6  aroC  X   -0.09
+ATOM  H5  Haro  X   0.14
+ATOM  H4  Haro  X   0.14
+ATOM  H3  Haro  X   0.14
+ATOM  H2  Haro  X   0.14
+ATOM  H1  Haro  X   0.14
+ATOM  C7  CH2   X   -0.16
+ATOM  C8  CH2   X   -0.16
+ATOM  N1  Nlys  X   -0.60
+ATOM  H10 Hpol  X   0.45
+ATOM  H11 Hpol  X   0.45
+ATOM  H12 Hpol  X   0.45
+ATOM  H8  Hapo  X   0.12
+ATOM  H9  Hapo  X   0.12
+ATOM  H6  Hapo  X   0.12
+ATOM  H7  Hapo  X   0.12
 BOND  C1   C2 
 BOND  C1   C6 
 BOND  C1   C7 
@@ -69,4 +69,4 @@ ICOOR_INTERNAL    H8  -120.372593   71.177011    1.069948   C8    C7    N1
 ICOOR_INTERNAL    H9  -119.258949   71.179223    1.070056   C8    C7    H8 
 ICOOR_INTERNAL    H6  -120.525151   71.440676    1.070001   C7    C1    C8 
 ICOOR_INTERNAL    H7  -118.953628   71.438450    1.070064   C7    C1    H6
-PDB_ROTAMERS PEA_conformers.sdf
+PDB_CONFORMERS PEA_conformers.pdb

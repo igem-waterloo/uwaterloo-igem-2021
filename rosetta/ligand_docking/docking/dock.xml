@@ -29,10 +29,10 @@
 		</SCORINGGRIDS>
 
 		<MOVERS>
-			<Transform name="transform" chain="X" box_size="7.0" move_distance="0.2" angle="20" cycles="500" repeats="1" temperature="5"/>
+			<Transform name="transform" chain="A" box_size="7.0" move_distance="0.2" angle="20" cycles="500" repeats="1" temperature="5"/>
 			<HighResDocker name="high_res_docker" cycles="6" repack_every_Nth="3" scorefxn="ligand_soft_rep" movemap_builder="docking"/>
 			<FinalMinimizer name="final" scorefxn="hard_rep" movemap_builder="final"/>
-			<InterfaceScoreCalculator name="add_scores" chains="X" scorefxn="hard_rep" native="1utm.pdb"/> 
+			<InterfaceScoreCalculator name="add_scores" chains="A" scorefxn="hard_rep" native="1utm.pdb"/> 
 		</MOVERS>
 
 		<PROTOCOLS>
