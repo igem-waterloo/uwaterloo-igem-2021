@@ -30750,6 +30750,11 @@ Protein_chain_A     3
 ; Include ligand topology
 #include "pea.itp"
 
+; Ligand position restraints
+#ifdef POSRES
+#include "posre_pea.itp"
+#endif
+
 ; Include water topology
 #include "./charmm36-feb2021.ff/tip3p.itp"
 
