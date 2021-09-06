@@ -1,6 +1,6 @@
 from display import Display, DisplayController
 from serial.tools import list_ports
-import serial, time, sys
+import serial, time, sys, platform
 
 def serial_connection(serial_port, serial_baud_rate):
     
@@ -9,8 +9,12 @@ def serial_connection(serial_port, serial_baud_rate):
 
     for port in available_ports:
         if "Arduino" in port.description:
-            serial_port = port.name
 
+            if platform.system() == 'Windows':
+                serial_port = port.name
+            elif platform.system() == 'Darwin':
+                serial_port = '/dev/' + port.name
+            
     if len(available_ports) == 0 or serial_port == '':
         raise ConnectionError('Arduino Device Not Connected.')
 
