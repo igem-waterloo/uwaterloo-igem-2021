@@ -1,12 +1,6 @@
 // Photodiode code adapted from http://startrobotics.blogspot.com/2013/05/how-to-use-ir-led-and-photodiode-with-arduino.html
 // Serial connection code adapted from https://thepoorengineer.com/en/arduino-python-plot/#python
 
-// **TAKE OUT LATER**:
-// If you get an error message when uploading the code to your Arduino, try the following:
-// - select Tools > Board > Arduino Micro
-// - check Tools > Port and make sure you have the right port selected
-
-
 // --Global constants--
 int baud_rate = 38400;
 long loopTime = 5000;    // Number of microseconds between readings
