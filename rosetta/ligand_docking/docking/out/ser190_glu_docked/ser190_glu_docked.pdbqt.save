@@ -1,0 +1,58 @@
+MODEL 1
+REMARK VINA RESULT:       4.8      0.000      0.000
+REMARK  3 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C_1  and  C_7 
+REMARK    2  A    between atoms: C_7  and  C_8 
+REMARK    3  A    between atoms: C_8  and  N_9 
+ROOT
+HETATM    1  C           0      94.149  79.642 -14.324  0.00  0.00    -0.057 A 
+HETATM    2  C           0      94.113  78.585 -13.434  0.00  0.00     0.007 A 
+HETATM    3  C           0      94.103  77.284 -13.906  0.00  0.00     0.001 A 
+HETATM    4  C           0      94.130  77.043 -15.266  0.00  0.00     0.000 A 
+HETATM    5  C           0      94.167  78.102 -16.156  0.00  0.00     0.001 A 
+HETATM    6  C           0      94.171  79.400 -15.684  0.00  0.00     0.007 A 
+ENDROOT
+BRANCH   1   7
+HETATM    7  C           0      94.160  81.058 -13.810  0.00  0.00     0.065 C 
+BRANCH   7   8
+HETATM    8  C           0      94.476  81.055 -12.313  0.00  0.00     0.234 C 
+BRANCH   8   9
+HETATM    9  N           0      94.135  79.743 -11.744  0.00  0.00    -0.079 N 
+HETATM   10  H           0      93.973  79.085 -12.490  0.00  0.00     0.274 HD
+HETATM   11  H           0      93.301  79.828 -11.181  0.00  0.00     0.274 HD
+HETATM   12  H           0      94.897  79.420 -11.167  0.00  0.00     0.274 HD
+ENDBRANCH   8   9
+ENDBRANCH   7   8
+ENDBRANCH   1   7
+TORSDOF 3
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:       5.3      1.251      3.345
+REMARK  3 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C_1  and  C_7 
+REMARK    2  A    between atoms: C_7  and  C_8 
+REMARK    3  A    between atoms: C_8  and  N_9 
+ROOT
+HETATM    1  C           0      94.564  78.970 -14.877  0.00  0.00    -0.057 A 
+HETATM    2  C           0      95.400  79.366 -15.904  0.00  0.00     0.007 A 
+HETATM    3  C           0      95.794  80.689 -16.004  0.00  0.00     0.001 A 
+HETATM    4  C           0      95.352  81.612 -15.075  0.00  0.00     0.000 A 
+HETATM    5  C           0      94.516  81.214 -14.047  0.00  0.00     0.001 A 
+HETATM    6  C           0      94.118  79.894 -13.953  0.00  0.00     0.007 A 
+ENDROOT
+BRANCH   1   7
+HETATM    7  C           0      94.135  77.529 -14.770  0.00  0.00     0.065 C 
+BRANCH   7   8
+HETATM    8  C           0      94.118  77.111 -13.299  0.00  0.00     0.234 C 
+BRANCH   8   9
+HETATM    9  N           0      94.256  78.302 -12.449  0.00  0.00    -0.079 N 
+HETATM   10  H           0      94.029  79.126 -12.985  0.00  0.00     0.274 HD
+HETATM   11  H           0      95.207  78.368 -12.115  0.00  0.00     0.274 HD
+HETATM   12  H           0      93.629  78.227 -11.662  0.00  0.00     0.274 HD
+ENDBRANCH   8   9
+ENDBRANCH   7   8
+ENDBRANCH   1   7
+TORSDOF 3
+ENDMDL
