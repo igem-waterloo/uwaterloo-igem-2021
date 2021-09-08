@@ -1,0 +1,145 @@
+MODEL 1
+REMARK VINA RESULT:      -4.6      0.000      0.000
+REMARK  3 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C3_4  and  N1_1 
+REMARK    2  A    between atoms: C1_2  and  C3_4 
+REMARK    3  A    between atoms: C1_2  and  C2_3 
+ROOT
+HETATM    1  C2  PEA A   1      95.332  80.088  -8.942  1.00  0.00    -0.057 A 
+HETATM    2  C4  PEA A   1      96.175  81.162  -8.656  1.00  0.00     0.007 A 
+HETATM    3  C5  PEA A   1      94.365  79.695  -8.017  1.00  0.00     0.007 A 
+HETATM    4  C6  PEA A   1      96.050  81.843  -7.444  1.00  0.00     0.001 A 
+HETATM    5  C7  PEA A   1      94.239  80.376  -6.807  1.00  0.00     0.001 A 
+HETATM    6  C8  PEA A   1      95.083  81.450  -6.520  1.00  0.00     0.000 A 
+ENDROOT
+BRANCH   1   7
+HETATM    7  C1  PEA A   1      95.466  79.359 -10.236  1.00  0.00     0.065 C 
+BRANCH   7   8
+HETATM    8  C3  PEA A   1      96.768  78.547 -10.310  1.00  0.00     0.234 C 
+BRANCH   8   9
+HETATM    9  N1  PEA A   1      96.641  77.269  -9.620  1.00  0.00    -0.079 N 
+HETATM   10  H10 PEA A   1      95.659  77.081  -9.424  1.00  0.00     0.274 HD
+HETATM   11  H11 PEA A   1      97.107  77.325  -8.715  1.00  0.00     0.274 HD
+HETATM   12  HN1 PEA A   1      97.040  76.526 -10.175  1.00  0.00     0.274 HD
+ENDBRANCH   8   9
+ENDBRANCH   7   8
+ENDBRANCH   1   7
+TORSDOF 3
+ENDMDL
+MODEL 2
+REMARK VINA RESULT:      -4.6      0.073      1.612
+REMARK  3 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C3_4  and  N1_1 
+REMARK    2  A    between atoms: C1_2  and  C3_4 
+REMARK    3  A    between atoms: C1_2  and  C2_3 
+ROOT
+HETATM    1  C2  PEA A   1      95.328  80.054  -8.995  1.00  0.00    -0.057 A 
+HETATM    2  C4  PEA A   1      94.383  79.663  -8.047  1.00  0.00     0.007 A 
+HETATM    3  C5  PEA A   1      96.161  81.144  -8.743  1.00  0.00     0.007 A 
+HETATM    4  C6  PEA A   1      94.270  80.362  -6.845  1.00  0.00     0.001 A 
+HETATM    5  C7  PEA A   1      96.048  81.843  -7.541  1.00  0.00     0.001 A 
+HETATM    6  C8  PEA A   1      95.102  81.453  -6.593  1.00  0.00     0.000 A 
+ENDROOT
+BRANCH   1   7
+HETATM    7  C1  PEA A   1      95.449  79.306 -10.281  1.00  0.00     0.065 C 
+BRANCH   7   8
+HETATM    8  C3  PEA A   1      96.770  78.529 -10.375  1.00  0.00     0.234 C 
+BRANCH   8   9
+HETATM    9  N1  PEA A   1      96.693  77.253  -9.674  1.00  0.00    -0.079 N 
+HETATM   10  H10 PEA A   1      97.107  77.346  -8.747  1.00  0.00     0.274 HD
+HETATM   11  H11 PEA A   1      97.254  76.560 -10.169  1.00  0.00     0.274 HD
+HETATM   12  HN1 PEA A   1      95.734  76.945  -9.605  1.00  0.00     0.274 HD
+ENDBRANCH   8   9
+ENDBRANCH   7   8
+ENDBRANCH   1   7
+TORSDOF 3
+ENDMDL
+MODEL 3
+REMARK VINA RESULT:      -4.5      2.267      3.985
+REMARK  3 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C3_4  and  N1_1 
+REMARK    2  A    between atoms: C1_2  and  C3_4 
+REMARK    3  A    between atoms: C1_2  and  C2_3 
+ROOT
+HETATM    1  C2  PEA A   1      95.241  80.132  -8.285  1.00  0.00    -0.057 A 
+HETATM    2  C4  PEA A   1      95.255  78.941  -9.010  1.00  0.00     0.007 A 
+HETATM    3  C5  PEA A   1      96.200  81.113  -8.535  1.00  0.00     0.007 A 
+HETATM    4  C6  PEA A   1      96.229  78.730  -9.987  1.00  0.00     0.001 A 
+HETATM    5  C7  PEA A   1      97.174  80.903  -9.512  1.00  0.00     0.001 A 
+HETATM    6  C8  PEA A   1      97.188  79.712 -10.237  1.00  0.00     0.000 A 
+ENDROOT
+BRANCH   1   7
+HETATM    7  C1  PEA A   1      94.200  80.357  -7.240  1.00  0.00     0.065 C 
+BRANCH   7   8
+HETATM    8  C3  PEA A   1      93.169  81.412  -7.669  1.00  0.00     0.234 C 
+BRANCH   8   9
+HETATM    9  N1  PEA A   1      91.895  80.802  -8.028  1.00  0.00    -0.079 N 
+HETATM   10  H10 PEA A   1      91.875  80.612  -9.029  1.00  0.00     0.274 HD
+HETATM   11  H11 PEA A   1      91.140  81.463  -7.847  1.00  0.00     0.274 HD
+HETATM   12  HN1 PEA A   1      91.750  79.950  -7.504  1.00  0.00     0.274 HD
+ENDBRANCH   8   9
+ENDBRANCH   7   8
+ENDBRANCH   1   7
+TORSDOF 3
+ENDMDL
+MODEL 4
+REMARK VINA RESULT:      -4.5      2.453      3.824
+REMARK  3 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C3_4  and  N1_1 
+REMARK    2  A    between atoms: C1_2  and  C3_4 
+REMARK    3  A    between atoms: C1_2  and  C2_3 
+ROOT
+HETATM    1  C2  PEA A   1      95.263  80.176  -8.276  1.00  0.00    -0.057 A 
+HETATM    2  C4  PEA A   1      96.237  81.139  -8.536  1.00  0.00     0.007 A 
+HETATM    3  C5  PEA A   1      95.252  78.981  -8.996  1.00  0.00     0.007 A 
+HETATM    4  C6  PEA A   1      97.203  80.907  -9.516  1.00  0.00     0.001 A 
+HETATM    5  C7  PEA A   1      96.218  78.749  -9.975  1.00  0.00     0.001 A 
+HETATM    6  C8  PEA A   1      97.193  79.712 -10.236  1.00  0.00     0.000 A 
+ENDROOT
+BRANCH   1   7
+HETATM    7  C1  PEA A   1      94.229  80.424  -7.229  1.00  0.00     0.065 C 
+BRANCH   7   8
+HETATM    8  C3  PEA A   1      93.031  81.214  -7.776  1.00  0.00     0.234 C 
+BRANCH   8   9
+HETATM    9  N1  PEA A   1      91.896  81.165  -6.862  1.00  0.00    -0.079 N 
+HETATM   10  H10 PEA A   1      92.093  81.735  -6.040  1.00  0.00     0.274 HD
+HETATM   11  H11 PEA A   1      91.772  80.211  -6.525  1.00  0.00     0.274 HD
+HETATM   12  HN1 PEA A   1      91.056  81.487  -7.323  1.00  0.00     0.274 HD
+ENDBRANCH   8   9
+ENDBRANCH   7   8
+ENDBRANCH   1   7
+TORSDOF 3
+ENDMDL
+MODEL 5
+REMARK VINA RESULT:      -4.3      2.048      2.228
+REMARK  3 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C3_4  and  N1_1 
+REMARK    2  A    between atoms: C1_2  and  C3_4 
+REMARK    3  A    between atoms: C1_2  and  C2_3 
+ROOT
+HETATM    1  C2  PEA A   1      95.255  80.218  -9.037  1.00  0.00    -0.057 A 
+HETATM    2  C4  PEA A   1      94.922  81.556  -8.830  1.00  0.00     0.007 A 
+HETATM    3  C5  PEA A   1      94.513  79.210  -8.421  1.00  0.00     0.007 A 
+HETATM    4  C6  PEA A   1      93.845  81.887  -8.007  1.00  0.00     0.001 A 
+HETATM    5  C7  PEA A   1      93.436  79.541  -7.598  1.00  0.00     0.001 A 
+HETATM    6  C8  PEA A   1      93.103  80.879  -7.391  1.00  0.00     0.000 A 
+ENDROOT
+BRANCH   1   7
+HETATM    7  C1  PEA A   1      96.406  79.863  -9.917  1.00  0.00     0.065 C 
+BRANCH   7   8
+HETATM    8  C3  PEA A   1      97.661  80.684  -9.585  1.00  0.00     0.234 C 
+BRANCH   8   9
+HETATM    9  N1  PEA A   1      97.743  81.891 -10.398  1.00  0.00    -0.079 N 
+HETATM   10  H10 PEA A   1      98.716  82.181 -10.485  1.00  0.00     0.274 HD
+HETATM   11  H11 PEA A   1      97.259  82.653  -9.924  1.00  0.00     0.274 HD
+HETATM   12  HN1 PEA A   1      97.338  81.732 -11.310  1.00  0.00     0.274 HD
+ENDBRANCH   8   9
+ENDBRANCH   7   8
+ENDBRANCH   1   7
+TORSDOF 3
+ENDMDL
