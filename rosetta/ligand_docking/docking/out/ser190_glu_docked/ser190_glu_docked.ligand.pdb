@@ -1,0 +1,48 @@
+HEADER    NONAME 15-Jun-21                                              NONE   1
+TITLE                                                                   NONE   2
+COMPND    PEA                                                           NONE   3
+AUTHOR    Apache                                                        NONE   4
+REVDAT   1  15-Jun-21     0                                             NONE   5
+HETATM    1  C           0     -97.289 236.863   5.392  0.00  0.00           C
+HETATM    2  C           0     -95.933 237.056   5.587  0.00  0.00           C
+HETATM    3  C           0     -95.020 236.230   4.959  0.00  0.00           C
+HETATM    4  C           0     -95.462 235.210   4.136  0.00  0.00           C
+HETATM    5  C           0     -96.817 235.017   3.942  0.00  0.00           C
+HETATM    6  C           0     -97.730 235.840   4.574  0.00  0.00           C
+HETATM    7  C           0     -98.283 237.763   6.076  0.00  0.00           C
+HETATM    8  C           0     -98.585 238.965   5.178  0.00  0.00           C
+HETATM    9  N           0     -99.556 239.843   5.846  0.00  0.00           N
+HETATM   10  H           0     -95.588 237.852   6.229  0.00  0.00           H
+HETATM   11  H           0     -93.962 236.380   5.111  0.00  0.00           H
+HETATM   12  H           0     -94.749 234.565   3.645  0.00  0.00           H
+HETATM   13  H           0     -97.162 234.220   3.299  0.00  0.00           H
+HETATM   14  H           0     -98.788 235.689   4.421  0.00  0.00           H
+HETATM   15  H           0     -97.868 238.112   7.022  0.00  0.00           H
+HETATM   16  H           0     -99.204 237.211   6.265  0.00  0.00           H
+HETATM   17  H           0     -99.001 238.617   4.233  0.00  0.00           H
+HETATM   18  H           0     -97.665 239.518   4.990  0.00  0.00           H
+HETATM   19  H           0     -99.755 240.636   5.254  0.00  0.00           H
+HETATM   20  H           0     -99.171 240.165   6.722  0.00  0.00           H
+HETATM   21  H           0    -100.408 239.331   6.021  0.00  0.00           H
+CONECT    1    2    6    7
+CONECT    2    1    3   10
+CONECT    3    2    4   11
+CONECT    4    3    5   12
+CONECT    5    4    6   13
+CONECT    6    1    5   14
+CONECT    7    1    8   15   16
+CONECT    8    7    9   18   17
+CONECT   10    2
+CONECT   11    3
+CONECT   12    4
+CONECT   13    5
+CONECT   14    6
+CONECT   15    7
+CONECT   16    7
+CONECT   17    8
+CONECT   18    8
+CONECT   19    9
+CONECT   20    9
+CONECT   21    9
+CONECT    9    8   19   20   21
+END

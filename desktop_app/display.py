@@ -15,38 +15,42 @@ REDRAW_FREQUENCY = 10
 pause = False
 
 class Display:
-
-    def __init__(self):
-        # TODO: Separate this into several functions?
-
-        # tkinter display window properties
+    # Helper functions
+    def _root_init(self):
         self.root = tk.Tk()
         self.root.wm_title("iGEM uWaterloo 2021 Desktop App")
         self.root.attributes("-fullscreen", True)
+
         self.screen_width = self.root.winfo_screenwidth()
         self.screen_height = self.root.winfo_screenheight()
-        self.dpi = self.root.winfo_fpixels('1i')
+        self.dpi = self.root.winfo_fpixels("1i")
 
-        # Frames to store the graph, info readout (text, data summaries, etc), and buttons for user input
-        self.graph = tk.Frame(self.root)
-        self.info_window = tk.Frame(self.root)  # meant info readouts
-        self.controls = tk.Frame(self.root)  # buttons
-
-        # Frame positioning within display
+    def _graph_init(self):
+        self.graph = tk.Frame(master=self.root)
         self.graph.pack()
-        self.info_window.pack()
+
+    def _info_readouts_init(self):
+        self.info_readouts = tk.Frame(master=self.root)
+        self.info_readouts.pack()
+
+    def _controls_init(self):
+        self.controls = tk.Frame(master=self.root)
         self.controls.pack()
 
-        # Text label for info window
-        self.info_label = tk.Label(self.info_window, text="Hello World")
+    def _info_label_init(self):
+        self.info_label = tk.Label(self.info_readouts, text="Hello World")
         self.info_label.pack()
 
-        # matplotlib figure
+    def _graph_figure_init(self):
         self.graph_figure = Figure(
-            figsize=(self.screen_width / self.dpi, self.screen_height * 0.85  / self.dpi),
-            dpi=self.dpi
+            figsize=(
+                self.screen_width / self.dpi,
+                self.screen_height * 0.85 / self.dpi,
+            ),
+            dpi=self.dpi,
         )
 
+    def plot(self):
         # TODO: Write a function to make the below nice
         # Plot by doing self.axis.plot() or if accessed externally:
         # d = Display()
@@ -61,36 +65,56 @@ class Display:
         ax0.set_xlim([0, 200])
         ax0.set_ylim([-100, 100])
 
-        ax0.set_ylabel('Voltage')
+        ax0.set_ylabel('Concentration')
         ax0.set_xlabel('Time')
         ax1.set_xlabel('Time')
 
         self.graph_figure.canvas.mpl_connect('button_press_event', DisplayController.handle_graph_clicked)
         
         self.canvas = FigureCanvasTkAgg(self.graph_figure, master=self.graph)  # A tk.DrawingArea.
+        # self.axis.cla() # clear axis before drawing
         self.canvas.draw()
 
-        # Add toolbar to graph
+    def _graph_toolbar_init(self):
         self.toolbar = NavigationToolbar2Tk(self.canvas, self.graph, pack_toolbar=False)
         self.toolbar.update()
-        
+
         self.toolbar.pack(side=tk.BOTTOM, fill=tk.X)
         self.canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
 
+    def _buttons_init(self):
         # Add buttons with appropriate methods linked
         self.quit_button = tk.Button(master=self.controls, text="Quit", command=self.root.quit)
         self.quit_button.pack(side=tk.BOTTOM)
 
         # Below button needs to be assigned a command
-        self.continue_button = tk.Button(
-            master=self.controls,
-            text="Continue Drawing",
-        )
+        self.continue_button = tk.Button(master=self.controls, text="Continue Drawing")
         self.continue_button.pack(side=tk.BOTTOM)
+
+    def __init__(self):
+
+        self._root_init()
+
+        # Set up frames to store the graph, info readout (text, data summaries, etc), and buttons for user input
+
+        self._graph_init()
+        self._info_readouts_init()
+        self._controls_init()  # buttons
+
+        # Set up text label for info window
+        self._info_label_init()
+
+        # Set up graph
+        self._graph_figure_init()
+        self.plot()
+        self._graph_toolbar_init()
+
+        self._buttons_init()
 
     @staticmethod
     def start_display():
         tk.mainloop()
+
 
 class DisplayController:
 

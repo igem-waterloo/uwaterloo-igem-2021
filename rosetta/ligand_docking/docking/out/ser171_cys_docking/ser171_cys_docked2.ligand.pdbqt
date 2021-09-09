@@ -1,0 +1,26 @@
+REMARK  3 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C3_4  and  N1_1 
+REMARK    2  A    between atoms: C1_2  and  C3_4 
+REMARK    3  A    between atoms: C1_2  and  C2_3 
+ROOT
+HETATM    1  C2  PEA A   1      10.555  -1.288 -49.191  1.00  0.00    -0.057 A 
+HETATM    2  C4  PEA A   1       9.892  -0.081 -49.410  1.00  0.00     0.007 A 
+HETATM    3  C5  PEA A   1      10.100  -2.456 -49.803  1.00  0.00     0.007 A 
+HETATM    4  C6  PEA A   1       8.773  -0.041 -50.243  1.00  0.00     0.001 A 
+HETATM    5  C7  PEA A   1       8.982  -2.416 -50.636  1.00  0.00     0.001 A 
+HETATM    6  C8  PEA A   1       8.318  -1.209 -50.855  1.00  0.00     0.000 A 
+ENDROOT
+BRANCH   1   7
+HETATM    7  C1  PEA A   1      11.751  -1.331 -48.300  1.00  0.00     0.065 C 
+BRANCH   7   8
+HETATM    8  C3  PEA A   1      13.056  -1.089 -49.073  1.00  0.00     0.234 C 
+BRANCH   8   9
+HETATM    9  N1  PEA A   1      14.219  -1.159 -48.196  1.00  0.00    -0.079 N 
+HETATM   10  H10 PEA A   1      14.144  -0.447 -47.470  1.00  0.00     0.274 HD
+HETATM   11  H11 PEA A   1      15.059  -0.936 -48.729  1.00  0.00     0.274 HD
+HETATM   12  HN1 PEA A   1      14.297  -2.078 -47.784  1.00  0.00     0.274 HD
+ENDBRANCH   8   9
+ENDBRANCH   7   8
+ENDBRANCH   1   7
+TORSDOF 3
