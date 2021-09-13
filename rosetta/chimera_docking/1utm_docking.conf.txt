@@ -1,0 +1,16 @@
+wait true
+
+center_x 86.42
+center_y 82.63
+center_z -11.64
+size_x 16.42
+size_y 11.72
+size_z 15.40
+
+energy_range 3
+exhaustiveness 8
+num_modes 10
+
+wait true
+backend local
+
