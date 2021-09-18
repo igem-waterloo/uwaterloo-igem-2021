@@ -1,3 +1,4 @@
+from sys import exit
 import tkinter as tk
 from typing import Dict, List, Iterable
 from threading import Timer
@@ -121,6 +122,7 @@ class DisplayController:
         # -- Quit function
         self.display.quit_button.configure(command=self.kill)
 
+        self.kill_signal = False
         self.do_redraw = False  # type: bool
         self.trigger_redraw = False
         self.redraw_timer = None
@@ -167,12 +169,15 @@ class DisplayController:
         self.stop_redraw_loop()
 
     def kill(self):
+        self.display.root.quit()
+        self.kill_signal = True
         exit(0)
 
     def start_display(self):
-        while True:
+        while not self.kill_signal:
             self.display.root.update_idletasks()
             self.display.root.update()
             if self.trigger_redraw:
                 self.display.canvas.draw()
                 self.trigger_redraw = False
+        self.display.root.destroy()
