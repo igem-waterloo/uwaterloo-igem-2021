@@ -1,3 +1,4 @@
+from argparse import ArgumentParser
 from display import Display, DisplayController
 from serial.tools import list_ports
 import serial, time, sys, platform
@@ -30,24 +31,25 @@ def serial_connection(serial_port, serial_baud_rate):
         return ''
 
 
-if __name__ =='__main__':
+def main(args):
 
-    # -- Serial Port Properties 
-    port_name = ''
-    baud_rate = 115200
-    arduino_obj = ''
-    connection_timeout = False
+    if not args.no_serial:
+        # -- Serial Port Properties
+        port_name = ''
+        baud_rate = 115200
+        arduino_obj = ''
+        connection_timeout = False
 
-    t_initial = time.time()
-    while arduino_obj == '':
-        arduino_obj = serial_connection(port_name, baud_rate)
-        if time.time() - t_initial > 10:
-            connection_timeout = True
-            break
+        t_initial = time.time()
+        while arduino_obj == '':
+            arduino_obj = serial_connection(port_name, baud_rate)
+            if time.time() - t_initial > 10:
+                connection_timeout = True
+                break
 
-    # -- Connection Failure by Timeout
-    if connection_timeout:
-        sys.exit('Connection Failure (Timeout)')
+        # -- Connection Failure by Timeout
+        if connection_timeout:
+            sys.exit('Connection Failure (Timeout)')
 
     # -- Instantiate Display Window
     display = Display()
@@ -57,3 +59,10 @@ if __name__ =='__main__':
 
     # -- Start Display
     Display.start_display()
+
+
+if __name__ == '__main__':
+    arg_parser = ArgumentParser()
+    arg_parser.add_argument("--no-serial", action="store_true", default=False)
+    args = arg_parser.parse_args()
+    main(args)
