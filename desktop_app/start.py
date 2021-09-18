@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+from data_sources import InputSource, SourceHook
 from display import Display, DisplayController
 from serial.tools import list_ports
 import serial, time, sys, platform
@@ -28,10 +29,16 @@ def serial_connection(serial_port, serial_baud_rate):
 
     except:
         print("Failed to connect with " + str(serial_port) + ' at ' + str(serial_baud_rate) + ' BAUD.')
-        return ''
+        raise ConnectionError('Failed to connect to Arduino Device.')
 
 
 def main(args):
+
+    # -- Instantiate Display Window
+    display = Display()
+
+    # -- Instantiate Plotting Backend
+    display_controller = DisplayController(display)
 
     if not args.no_serial:
         # -- Serial Port Properties
@@ -51,14 +58,16 @@ def main(args):
         if connection_timeout:
             sys.exit('Connection Failure (Timeout)')
 
-    # -- Instantiate Display Window
-    display = Display()
-
-    # -- Instantiate Plotting Backend
-    display_controller = DisplayController(display)
+        source_hook = SourceHook(arduino_obj, display_controller)
+        source_hook.start_read_loop()
+    else:
+        user_input_source = InputSource()
+        source_hook = SourceHook(user_input_source, display_controller)
+        source_hook.start_read_loop()
+        user_input_source.read_loop()
 
     # -- Start Display
-    Display.start_display()
+    display_controller.start_display()
 
 
 if __name__ == '__main__':

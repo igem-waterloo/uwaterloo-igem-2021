@@ -1,6 +1,5 @@
 import tkinter as tk
-
-from typing import Dict, List
+from typing import Dict, List, Iterable
 from threading import Timer
 from matplotlib.animation import FuncAnimation
 
@@ -12,9 +11,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 REDRAW_FREQUENCY = 10
-pause = False
+
 
 class Display:
+
     # Helper functions
     def _root_init(self):
         self.root = tk.Tk()
@@ -24,6 +24,16 @@ class Display:
         self.screen_width = self.root.winfo_screenwidth()
         self.screen_height = self.root.winfo_screenheight()
         self.dpi = self.root.winfo_fpixels("1i")
+
+    def _axis_init(self):
+        self.fig = Figure(figsize=(self.screen_width / self.dpi,  self.screen_height * 0.85 / self.dpi), dpi=self.dpi)
+        self.axis = self.fig.add_subplot()
+        self.axis.set_ylabel('Concentration')
+        self.axis.set_xlabel('Time')
+
+    def _canvas_init(self):
+        self.canvas = FigureCanvasTkAgg(self.fig, master=self.graph)  # A tk.DrawingArea.
+        self.canvas.draw()
 
     def _graph_init(self):
         self.graph = tk.Frame(master=self.root)
@@ -50,31 +60,6 @@ class Display:
             dpi=self.dpi,
         )
 
-    def plot(self):
-        # TODO: Write a function to make the below nice
-        # Plot by doing self.axis.plot() or if accessed externally:
-        # d = Display()
-        # d.axis.plot()
-
-        x = np.arange(0, 25,0.1)
-        self.graph_figure, (ax0, ax1) = plt.subplots(nrows=1, ncols=2, sharex=True, sharey=True)
-        
-        ax0.plot(np.cos(x))
-        ax1.plot(np.sin(x))
-
-        ax0.set_xlim([0, 200])
-        ax0.set_ylim([-100, 100])
-
-        ax0.set_ylabel('Concentration')
-        ax0.set_xlabel('Time')
-        ax1.set_xlabel('Time')
-
-        self.graph_figure.canvas.mpl_connect('button_press_event', DisplayController.handle_graph_clicked)
-        
-        self.canvas = FigureCanvasTkAgg(self.graph_figure, master=self.graph)  # A tk.DrawingArea.
-        # self.axis.cla() # clear axis before drawing
-        self.canvas.draw()
-
     def _graph_toolbar_init(self):
         self.toolbar = NavigationToolbar2Tk(self.canvas, self.graph, pack_toolbar=False)
         self.toolbar.update()
@@ -84,7 +69,7 @@ class Display:
 
     def _buttons_init(self):
         # Add buttons with appropriate methods linked
-        self.quit_button = tk.Button(master=self.controls, text="Quit", command=self.root.quit)
+        self.quit_button = tk.Button(master=self.controls, text="Quit")
         self.quit_button.pack(side=tk.BOTTOM)
 
         # Below button needs to be assigned a command
@@ -97,7 +82,9 @@ class Display:
 
         # Set up frames to store the graph, info readout (text, data summaries, etc), and buttons for user input
 
+        self._axis_init()
         self._graph_init()
+        self._canvas_init()
         self._info_readouts_init()
         self._controls_init()  # buttons
 
@@ -106,7 +93,6 @@ class Display:
 
         # Set up graph
         self._graph_figure_init()
-        self.plot()
         self._graph_toolbar_init()
 
         self._buttons_init()
@@ -128,15 +114,22 @@ class DisplayController:
 
         # -- Pause and function for later
         self.display = display
-        self.display.graph_figure.canvas.callbacks.connect('button_press_event', self.handle_graph_clicked)
+        # self.display.graph_figure.canvas.callbacks.connect('button_press_event', self.handle_graph_clicked)
+        self.display.fig.canvas.callbacks.connect('button_press_event', self.handle_graph_clicked)
         self.display.continue_button.configure(command=self.start_redraw_loop)
 
+        # -- Quit function
+        self.display.quit_button.configure(command=self.kill)
+
         self.do_redraw = False  # type: bool
+        self.trigger_redraw = False
         self.redraw_timer = None
         self.start_redraw_loop()
 
     def accept_data(self, graph_title: str, data: float):
         current_data = self.graphs.get(graph_title, [])
+        if len(current_data) == 0 and not graph_title in self.graphs_to_draw:
+            self.graphs_to_draw.append(graph_title)
         current_data.append(data)
         self.graphs[graph_title] = current_data
 
@@ -153,14 +146,17 @@ class DisplayController:
             self.redraw_timer.cancel()
             self.redraw_timer = None
 
+    def plot(self, graph: Iterable[float]):
+        self.display.axis.plot(graph)
+
     # -- Looped function
     def _redraw_loop(self):
+        self.display.axis.cla()
         for graph_title in self.graphs_to_draw:
-            graph = self.graphs[graph_title]
-            # TODO: Draw each graph
+            graph = self.graphs.get(graph_title, [])
+            self.plot(graph)
 
-            plt.cla()
-            self.ax0.plot(graph)
+        self.trigger_redraw = True
 
         if self.do_redraw:
             self.redraw_timer = Timer(1 / REDRAW_FREQUENCY, self._redraw_loop)
@@ -168,7 +164,15 @@ class DisplayController:
             self.redraw_timer.start()
 
     def handle_graph_clicked(self, event):
-        # TODO: Pause drawing
         self.stop_redraw_loop()
 
+    def kill(self):
+        exit(0)
 
+    def start_display(self):
+        while True:
+            self.display.root.update_idletasks()
+            self.display.root.update()
+            if self.trigger_redraw:
+                self.display.canvas.draw()
+                self.trigger_redraw = False
