@@ -21,4 +21,5 @@ for fn in file_names:
     energy_scores.append(outFileName.replace("_docked", ""), #energy score here) #append energy score from line 2 of the output file from the autodock output
 # check for saving autodock vina results: https://www.researchgate.net/post/How_to_save_both_receptor_and_ligand_in_same_file
 # save array as txt or csv file
+np.savetxt("Docking_Scores",energy_scores, delimiter=' ')
 # fin :)
