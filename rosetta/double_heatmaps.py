@@ -3,7 +3,7 @@ import re
 import numpy as np
 import matplotlib.pyplot as plt
 
-base = 'strep_sept27'
+base = 'sept28'
 direct = os.listdir(base)
 energy = []
 resnames = []
