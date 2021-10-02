@@ -31,8 +31,8 @@ class InputSource(Source):
         return data_copy
 
     def put_manual_data(self):
-        self.data.append(input().encode())
-        print(self.data)
+        in_data = input().encode()
+        self.data.append(in_data)
 
     def put_data(self, data: bytes):
         self.data.append(data)
