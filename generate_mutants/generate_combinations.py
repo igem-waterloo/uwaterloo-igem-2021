@@ -58,7 +58,7 @@ def more_than_two_mutants(single_list, res_num):
                     result_file.write("\n")
             
 # initializing single mutant list 
-with open('singleMutants_test.txt') as f:
+with open('single_mutants.txt') as f:
     single_list = [line.rstrip() for line in f]
   
 # printing original list in console

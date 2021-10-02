@@ -1,0 +1,7 @@
+-ex1
+-ex2
+-mutants_list doubleMutants.txt
+-ignore_unrecognized_res
+-output_mutant_structures
+-database /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/intel2020/openmpi4/rosetta/3.12/database
+
