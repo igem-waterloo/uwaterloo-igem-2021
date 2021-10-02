@@ -207,6 +207,9 @@ class DisplayController:
         self.kill_signal = True
         exit(0)
 
+    def has_data(self):
+        return len([len(self.graphs[key]) for key in self.graphs.keys() if len(self.graphs[key]) > 0])
+
     def start_display(self):
         while not self.kill_signal:
             self.display.root.update_idletasks()
@@ -215,7 +218,7 @@ class DisplayController:
                 self.add_graph_display_button(analyte)
             self.add_button_queue = []
             self.display.info_label.configure(text=self.readout_text)
-            if self.trigger_redraw:
+            if self.trigger_redraw and self.has_data():
                 self.display.canvas.draw()
                 self.trigger_redraw = False
         self.display.root.destroy()
