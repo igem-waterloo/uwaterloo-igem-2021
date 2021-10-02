@@ -1,15 +1,13 @@
+import sys
 from sys import exit
 import tkinter as tk
+import datetime
+import itertools
 from typing import Dict, List, Iterable
 from threading import Timer
-from matplotlib.animation import FuncAnimation
 
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
-from matplotlib.backend_bases import MouseButton
-
-import matplotlib.pyplot as plt
-import numpy as np
 
 REDRAW_FREQUENCY = 10
 
@@ -125,6 +123,9 @@ class DisplayController:
         # -- Quit function
         self.display.quit_button.configure(command=self.kill)
 
+        # -- Export function
+        self.display.export_button.configure(command=self.export)
+
         self.add_button_queue = []
         self.readout_text = ""
 
@@ -166,8 +167,40 @@ class DisplayController:
     def plot(self, graph: Iterable[float]):
         self.display.axis.plot(graph)
 
+    def export(self):
+        try:
+            timestring = datetime.datetime.now().strftime("%S-%M-%H-%d-%m-%Y")
+            with open(f"data{timestring}.csv", "w+") as data:
+                with open(f"maximums{timestring}.csv", "w+") as maxis:
+                    maxis.write("analyte, max_concentration\n")
+
+                    all_titles = [*self.graphs_to_draw.keys()]
+
+                    for graph_title in all_titles:
+                        graph_data = self.graphs.get(graph_title, [])
+                        if graph_data:
+                            maxis.write(f"{graph_title}, {max(graph_data)}\n")
+                        else:
+                            maxis.write(f"{graph_title}, NaN\n")
+
+                    data.write(f"index, {', '.join(all_titles)}\n")
+
+                    for index, all_data in enumerate(
+                        itertools.zip_longest(
+                            *[self.graphs[title] for title in all_titles],
+                            fillvalue="NaN"
+                        )
+                    ):
+                        data.write(f"{index}, {', '.join([str(v) for v in all_data])}\n")
+
+                    maxis.flush()
+                    data.flush()
+
+        except Exception as e:
+            print(f"Encountered exception {e} while trying to export data!", file=sys.stderr)
+
     def put_maximums(self):
-        new_text = "" if self.do_redraw else "Redrawing Paused\n"
+        new_text = "Maximums:\n" if self.do_redraw else "Redrawing Paused\nMaximums:\n"
         for graph_title in self.graphs_to_draw.keys():
             graph_data = self.graphs.get(graph_title, [])
             new_text += graph_title + ": "
@@ -181,10 +214,14 @@ class DisplayController:
     # -- Looped function
     def _redraw_loop(self):
         self.display.axis.cla()
+        drawn_graphs = []
         for graph_title in self.graphs_to_draw.keys():
             graph = self.graphs.get(graph_title, [])
             if self.graphs_to_draw[graph_title]:
                 self.plot(graph)
+                drawn_graphs.append(graph_title)
+
+        self.display.axis.legend(drawn_graphs)
 
         self.trigger_redraw = True
 
