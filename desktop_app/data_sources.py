@@ -11,24 +11,24 @@ class Source():
         return 0
 
     @abstractmethod
-    def readlines(self) -> List[bytes]:
+    def readline(self) -> bytes:
         pass
 
 
 class InputSource(Source):
 
     def __init__(self, read_frequency: float = 10):
-        self.data = []
+        self.data = []  # type: list[bytes]
         self.read_frequency = read_frequency
 
     @property
     def in_waiting(self) -> int:
         return len(self.data)
 
-    def readlines(self) -> List[bytes]:
-        data_copy = [data for data in self.data]
-        self.data = []
-        return data_copy
+    def readline(self) -> bytes:
+        first = self.data[0]
+        self.data = self.data[1:]
+        return first
 
     def put_manual_data(self):
         in_data = input().encode()
@@ -53,20 +53,21 @@ class SourceHook():
         self.source = source
         self.display_controller = display_controller
         self.read_frequency = read_frequency
-        self.redraw_timer = None
+        self.retry_timer = None
 
     def try_read(self):
-        if (self.source.in_waiting > 0):
-            lines = [line.decode() for line in self.source.readlines()]
-            for line in lines:
-                analyte, datapoint = line.split(' ')
-                datapoint = float(datapoint)
-                self.display_controller.accept_data(analyte, datapoint)
+        lines = []
+        while self.source.in_waiting > 0:
+            lines.append(self.source.readline().decode())
+        for line in lines:
+            analyte, datapoint = line.split(' ')
+            datapoint = float(datapoint)
+            self.display_controller.accept_data(analyte, datapoint)
 
     def start_read_loop(self):
-        self.redraw_timer = Timer(1 / self.read_frequency, self.read_loop)
-        self.redraw_timer.daemon = True  # Kill the timer when the program exits
-        self.redraw_timer.start()
+        self.retry_timer = Timer(1 / self.read_frequency, self.read_loop)
+        self.retry_timer.daemon = True  # Kill the timer when the program exits
+        self.retry_timer.start()
 
     def read_loop(self):
         self.try_read()
