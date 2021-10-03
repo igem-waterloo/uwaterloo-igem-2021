@@ -10,6 +10,7 @@ location = "/Users/kelliechong/Documents/iGEM2021/autodock_vina_1_1_2/bin/vina"
 energy_file = open('energyScores.txt', 'w')
 
 for fn in file_names:
+    os.chdir("/Users/kelliechong/documents/iGEM2021/uwaterloo-igem-2021/rosetta/1UTM_renum_HETATM_res171")
     outFileName = fn.replace(".pdb", "").replace("1UTM_renumbered_ignorechain_HETATM_no_Ca.A-", "")+"_docked" 
     os.mkdir(os.path.join("/Users/kelliechong/Documents/iGEM2021/1UTM/rosetta/ligand_docking/docking/out/", outFileName))
     chimera.openModels.open(fn, type = "PDB")
@@ -21,7 +22,7 @@ for fn in file_names:
     single_energy = open(outFileName, 'r').read()
     open(outFileName, 'r').close()
 
-    os.chdir("Users/kelliechong//Documents/iGEM2021/1UTM/rosetta/ligand_docking/docking/out/")
+    os.chdir("../")
    
     energy_file.write('\n***\n\n')
     energy_file.write(outFileName+'\n')

@@ -1,0 +1,5 @@
+import os
+import sys
+os.chdir("/Users/kelliechong/Documents/iGEM2021/1UTM/chimera_docking/")
+execfile('autodock.py')
+
