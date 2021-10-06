@@ -1,0 +1,41 @@
+MODEL 1
+REMARK VINA RESULT:      -7.4      0.000      0.000
+REMARK  5 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C10_4  and  C11_1 
+REMARK    2  A    between atoms: C10_4  and  C9_5 
+REMARK    3  A    between atoms: C8_6  and  C9_5 
+REMARK    4  A    between atoms: C7_7  and  C8_6 
+REMARK    5  A    between atoms: C2_8  and  C7_7 
+ROOT
+HETATM    1  C2  BTN A 201      35.993  -6.772 -27.029  1.00 17.34     0.072 C 
+HETATM    2  S1  BTN A 201      35.058  -5.439 -27.732  1.00 19.00    -0.160 SA
+HETATM    3  C6  BTN A 201      36.017  -4.188 -26.959  1.00 16.24     0.101 C 
+HETATM    4  C5  BTN A 201      37.443  -4.745 -26.938  1.00 17.48     0.119 A 
+HETATM    5  N1  BTN A 201      38.150  -4.276 -28.115  1.00 19.51    -0.336 N 
+ATOM      6  H1  BTN A 201      38.378  -3.299 -28.299  1.00  0.00     0.164 HD
+HETATM    7  C3  BTN A 201      38.490  -5.373 -28.993  1.00 17.89     0.316 A 
+HETATM    8  O3  BTN A 201      39.041  -5.262 -30.099  1.00 17.24    -0.247 OA
+HETATM    9  N2  BTN A 201      38.074  -6.598 -28.339  1.00 14.89    -0.335 N 
+ATOM     10  H2  BTN A 201      38.205  -7.537 -28.714  1.00  0.00     0.164 HD
+HETATM   11  C4  BTN A 201      37.439  -6.284 -27.060  1.00 15.62     0.123 A 
+ENDROOT
+BRANCH   1  12
+HETATM   12  C7  BTN A 201      35.784  -8.100 -27.753  1.00 15.74     0.017 C 
+BRANCH  12  13
+HETATM   13  C8  BTN A 201      34.306  -8.483 -27.698  1.00 15.56     0.002 C 
+BRANCH  13  14
+HETATM   14  C9  BTN A 201      34.054  -9.853 -28.327  1.00 14.16     0.010 C 
+BRANCH  14  15
+HETATM   15  C10 BTN A 201      32.692 -10.440 -27.932  1.00 15.79     0.113 C 
+BRANCH  15  16
+HETATM   16  C11 BTN A 201      32.654 -10.852 -26.461  1.00 16.15     0.172 C 
+HETATM   17  O11 BTN A 201      33.598 -11.521 -26.002  1.00 12.94    -0.648 OA
+HETATM   18  O12 BTN A 201      31.699 -10.493 -25.754  1.00 18.33    -0.648 OA
+ENDBRANCH  15  16
+ENDBRANCH  14  15
+ENDBRANCH  13  14
+ENDBRANCH  12  13
+ENDBRANCH   1  12
+TORSDOF 5
+ENDMDL
