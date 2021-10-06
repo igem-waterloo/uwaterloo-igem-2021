@@ -1,1 +1,4 @@
+matplotlib
+numpy
 pyinstaller
+pyserial
