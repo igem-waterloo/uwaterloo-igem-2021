@@ -1,0 +1,20 @@
+CRYST1   74.941   85.085   32.185  90.00  90.00  90.00 P 21 21 2     4
+HETATM    1  N   PEA A 246      94.893  80.277 -13.897  1.00 24.73      B    N  
+HETATM    2  C6' PEA A 246      94.812  78.233 -17.754  1.00 30.34      B    C  
+HETATM    3  C5' PEA A 246      94.646  77.729 -19.043  1.00 31.68      B    C  
+HETATM    4  C4' PEA A 246      93.585  76.864 -19.316  1.00 31.40      B    C  
+HETATM    5  C3' PEA A 246      92.704  76.511 -18.300  1.00 30.39      B    C  
+HETATM    6  C2' PEA A 246      92.883  77.021 -17.015  1.00 29.82      B    C  
+HETATM    7  C1' PEA A 246      93.935  77.883 -16.731  1.00 29.68      B    C  
+HETATM    8  C1  PEA A 246      94.660  79.840 -15.293  1.00 27.81      B    C  
+HETATM    9  C2  PEA A 246      94.127  78.420 -15.337  1.00 28.31      B    C  
+CONECT    1    8
+CONECT    2    3    7
+CONECT    3    2    4
+CONECT    4    3    5
+CONECT    5    4    6
+CONECT    6    5    7
+CONECT    7    2    6    9
+CONECT    8    1    9
+CONECT    9    7    8
+END
