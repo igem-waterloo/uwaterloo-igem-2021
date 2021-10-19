@@ -20,6 +20,9 @@
 ; Include forcefield parameters
 #include "./charmm36-feb2021.ff/forcefield.itp"
 
+; Include ligand parameters
+#include "pea.prm"
+
 [ moleculetype ]
 ; Name            nrexcl
 Protein_chain_A     3
@@ -30238,6 +30241,9 @@ Protein_chain_A     3
 #include "posre.itp"
 #endif
 
+; Include ligand topology
+#include "pea.itp"
+
 ; Include water topology
 #include "./charmm36-feb2021.ff/tip3p.itp"
 
@@ -30253,8 +30259,11 @@ Protein_chain_A     3
 
 [ system ]
 ; Name
-01-OCT-21   XXXX
+01-OCT-21   XXXX in water
 
 [ molecules ]
 ; Compound        #mols
 Protein_chain_A     1
+PEA                 1
+SOL         7575
+NA               4
