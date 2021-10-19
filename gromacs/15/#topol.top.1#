@@ -30259,11 +30259,9 @@ Protein_chain_A     3
 
 [ system ]
 ; Name
-01-OCT-21   XXXX in water
+01-OCT-21   XXXX
 
 [ molecules ]
 ; Compound        #mols
 Protein_chain_A     1
 PEA                 1
-SOL         7575
-NA               4
