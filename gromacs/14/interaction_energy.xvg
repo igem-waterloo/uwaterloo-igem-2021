@@ -1,0 +1,29 @@
+# This file was created Tue Oct 19 12:00:52 2021
+# Created by:
+#                      :-) GROMACS - gmx energy, 2021.2 (-:
+# 
+# Executable:   /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/gcc9/openmpi4/gromacs/2021.2/bin/gmx
+# Data prefix:  /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/gcc9/openmpi4/gromacs/2021.2
+# Working dir:  /project/6002183/sehacker/uwaterloo-igem-2021/gromacs/14
+# Command line:
+#   gmx energy -f ie.edr -o interaction_energy.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Great Red Oystrich Makes All Chemists Sane
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Coul-SR:Protein-PEA"
+@ s1 legend "LJ-SR:Protein-PEA"
+    0.000000  -19.505217  -77.342949
+   10.000000  -21.485828  -81.958488
+   20.000000  -21.231230  -79.996674
+   30.000000   -4.977018  -79.189758

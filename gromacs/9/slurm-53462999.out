@@ -1,0 +1,82 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) CCconfig      4) gcccore/.9.3.0     7) ucx/1.8.0
+  2) StdEnv/2020   5) imkl/2020.1.217    8) libfabric/1.10.1
+  3) gentoo/2020   6) intel/2020.1.217   9) openmpi/4.0.3
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) openmpi/4.0.3
+
+
+Lmod is automatically replacing "intel/2020.1.217" with "gcc/9.3.0".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) openmpi/4.0.3
+
+                      :-) GROMACS - gmx mdrun, 2021.2 (-:
+
+                            GROMACS is written by:
+     Andrey Alekseenko              Emile Apol              Rossen Apostolov     
+         Paul Bauer           Herman J.C. Berendsen           Par Bjelkmar       
+       Christian Blau           Viacheslav Bolnykh             Kevin Boyd        
+     Aldert van Buuren           Rudi van Drunen             Anton Feenstra      
+    Gilles Gouaillardet             Alan Gray               Gerrit Groenhof      
+       Anca Hamuraru            Vincent Hindriksen          M. Eric Irrgang      
+      Aleksei Iupinov           Christoph Junghans             Joe Jordan        
+    Dimitrios Karkoulis            Peter Kasson                Jiri Kraus        
+      Carsten Kutzner              Per Larsson              Justin A. Lemkul     
+       Viveca Lindahl            Magnus Lundborg             Erik Marklund       
+        Pascal Merz             Pieter Meulenhoff            Teemu Murtola       
+        Szilard Pall               Sander Pronk              Roland Schulz       
+       Michael Shirts            Alexey Shvetsov             Alfons Sijbers      
+       Peter Tieleman              Jon Vincent              Teemu Virolainen     
+     Christian Wennberg            Maarten Wolf              Artem Zhmurov       
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2019, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2021.2
+Executable:   /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/gcc9/openmpi4/gromacs/2021.2/bin/gmx
+Data prefix:  /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/gcc9/openmpi4/gromacs/2021.2
+Working dir:  /project/6002183/sehacker/uwaterloo-igem-2021/gromacs/9
+Command line:
+  gmx mdrun -deffnm nvt
+
+Reading file nvt.tpr, VERSION 2021.2 (single precision)
+Changing nstlist from 20 to 80, rlist from 1.219 to 1.314
+
+Using 8 MPI threads
+Using 4 OpenMP threads per tMPI thread
+
+starting mdrun '01-OCT-21   XXXX in water'
+50000 steps,    100.0 ps.
+
+Writing final coordinates.
+
+
+Dynamic load balancing report:
+ DLB was off during the run due to low measured imbalance.
+ Average load imbalance: 2.4%.
+ The balanceable part of the MD step is 76%, load imbalance is computed from this.
+ Part of the total run time spent waiting due to load imbalance: 1.8%.
+
+
+               Core t (s)   Wall t (s)        (%)
+       Time:     4244.821      132.651     3200.0
+                 (ns/day)    (hour/ns)
+Performance:       65.135        0.368
+
+GROMACS reminds you: "This simulation is not as the former." (Malvolio, Act II, scene V of Shaphespeare's Twelfth Night)
+

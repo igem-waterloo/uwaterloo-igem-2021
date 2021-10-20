@@ -1,0 +1,30 @@
+# This file was created Tue Oct 19 11:53:49 2021
+# Created by:
+#                      :-) GROMACS - gmx energy, 2021.2 (-:
+# 
+# Executable:   /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/gcc9/openmpi4/gromacs/2021.2/bin/gmx
+# Data prefix:  /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/gcc9/openmpi4/gromacs/2021.2
+# Working dir:  /project/6002183/sehacker/uwaterloo-igem-2021/gromacs/9
+# Command line:
+#   gmx energy -f ie.edr -o interaction_energy.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Good ROcking Metal Altar for Chronical Sinners
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Coul-SR:Protein-PEA"
+@ s1 legend "LJ-SR:Protein-PEA"
+    0.000000  -46.481800  -78.573952
+   10.000000  -58.316643  -70.778046
+   20.000000  -32.379803  -57.621185
+   30.000000  -67.369141  -66.787239
+   40.000000  -69.317978  -55.242481

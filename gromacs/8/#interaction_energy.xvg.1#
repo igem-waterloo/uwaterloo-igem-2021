@@ -1,0 +1,32 @@
+# This file was created Tue Oct 19 11:52:37 2021
+# Created by:
+#                      :-) GROMACS - gmx energy, 2021.2 (-:
+# 
+# Executable:   /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/gcc9/openmpi4/gromacs/2021.2/bin/gmx
+# Data prefix:  /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/gcc9/openmpi4/gromacs/2021.2
+# Working dir:  /project/6002183/sehacker/uwaterloo-igem-2021/gromacs/8
+# Command line:
+#   gmx energy -f ie.edr -o interaction_energy.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Glycine aRginine prOline Methionine Alanine Cystine Serine
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Coul-SR:Protein-PEA"
+@ s1 legend "LJ-SR:Protein-PEA"
+    0.000000  -63.186657  -62.037636
+   10.000000  -47.096256  -69.193604
+   20.000000  -51.289200  -66.372238
+   30.000000  -58.963543  -61.211231
+   40.000000  -52.488510  -56.658928
+   50.000000  -49.676460  -54.594555
+   60.000000  -62.248661  -51.215080

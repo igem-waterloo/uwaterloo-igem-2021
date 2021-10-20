@@ -1,0 +1,36 @@
+# This file was created Tue Oct 19 12:05:16 2021
+# Created by:
+#                      :-) GROMACS - gmx energy, 2021.2 (-:
+# 
+# Executable:   /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/gcc9/openmpi4/gromacs/2021.2/bin/gmx
+# Data prefix:  /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/gcc9/openmpi4/gromacs/2021.2
+# Working dir:  /project/6002183/sehacker/uwaterloo-igem-2021/gromacs/3
+# Command line:
+#   gmx energy -f ie.edr -o interaction_energy.xvg
+# gmx energy is part of G R O M A C S:
+#
+# Giant Rising Ordinary Mutants for A Clerical Setup
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Coul-SR:Protein-PEA"
+@ s1 legend "LJ-SR:Protein-PEA"
+    0.000000  -56.729332  -74.521286
+   10.000000  -28.993132  -75.353783
+   20.000000  -20.748190  -70.370636
+   30.000000  -35.156837  -73.038918
+   40.000000  -12.526377  -74.636497
+   50.000000  -29.136738  -66.541969
+   60.000000  -32.675129  -62.175526
+   70.000000   -1.477490  -68.530334
+   80.000000   -2.254685  -68.089912
+   90.000000  -19.459366  -65.965828
+  100.000000  -19.341589  -71.621605

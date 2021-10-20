@@ -1,0 +1,37 @@
+# This file was created Tue Oct 19 11:50:50 2021
+# Created by:
+#                      :-) GROMACS - gmx energy, 2021.2 (-:
+# 
+# Executable:   /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/gcc9/openmpi4/gromacs/2021.2/bin/gmx
+# Data prefix:  /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/MPI/gcc9/openmpi4/gromacs/2021.2
+# Working dir:  /project/6002183/sehacker/uwaterloo-igem-2021/gromacs/7
+# Command line:
+#   gmx energy -f ie.edr -o interaction_energy.xvg
+# gmx energy is part of G R O M A C S:
+#
+# GROtesk MACabre and Sinister
+#
+@    title "GROMACS Energies"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "(kJ/mol)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Coul-SR:Protein-PEA"
+@ s1 legend "LJ-SR:Protein-PEA"
+    0.000000  -55.202576  -68.867073
+   10.000000  -66.845894  -61.491444
+   20.000000  -58.248264  -65.964767
+   30.000000  -48.981075  -83.630684
+   40.000000  -54.475979  -80.466553
+   50.000000  -51.685272  -84.494492
+   60.000000  -59.670216  -67.853470
+   70.000000  -24.338308  -80.043076
+   80.000000  -24.509859  -82.664719
+   90.000000  -18.434046  -78.118584
+  100.000000  -27.827826  -80.198753
+  110.000000  -17.934225  -78.470360
